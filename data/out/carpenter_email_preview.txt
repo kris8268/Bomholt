@@ -1,0 +1,31 @@
+Nye opgaver der kræver tømrer: 5 stk
+
+1) (ukendt adresse)
+   Modtaget: 2026-02-19T10:27:41
+   Estimat (maler): 300 min
+   m²: None | værelser: None
+   Uddrag: Arbejdsordre – Maling og Tømrerarbejde Adresse: Nørregade 45, 2. th., 8000 Aarhus C m² 85 Antal værelser 3 Beskrivelse af opgave: Lejligheden skal males i alle opholdsrum. Vægge og lofter skal have 2 lag maling. Der skal...
+
+2) (ukendt adresse)
+   Modtaget: 2026-02-19T10:27:02
+   Estimat (maler): 300 min
+   m²: None | værelser: None
+   Uddrag: Arbejdsordre – Maling + Tømrer Adresse: Albanigade 10, 1. th., 5000 Odense C m² 110 Antal værelser 4 Beskrivelse af opgave: Maling af hele lejligheden inkl. gang. 2 lag på vægge, 1 lag på lofter. Spartel i revner. Tømrer...
+
+3) Danmarksgade 22, 7000 Fredericia
+   Modtaget: 2026-02-19T10:26:30
+   Estimat (maler): 300 min
+   m²: None | værelser: None
+   Uddrag: Renovering – Maler og Tømrer Adresse: Danmarksgade 22, 7000 Fredericia m² 95 Antal værelser 3 Beskrivelse af opgave: Maling af vægge/lofter i alle rum. 2 lag. Pletspartling efter behov. Tømrerarbejde: Tømmerarbejde: Opsæ...
+
+4) (ukendt adresse)
+   Modtaget: 2026-02-19T10:25:59
+   Estimat (maler): 300 min
+   m²: None | værelser: 3
+   Uddrag: Opgave – Maling og Tømrer Adresse: Boulevarden 15, 3. mf., 9000 Aalborg m² 78 Antal værelser 3 Beskrivelse af opgave: Maling af vægge og lofter i 3 rum. 2 lag. Spartel ved stød. Tømrerarbejde: Tømmerarbejde: Udskiftning ...
+
+5) (ukendt adresse)
+   Modtaget: 2026-02-19T04:14:19
+   Estimat (maler): 1080 min
+   m²: 85.0 | værelser: 3
+   Uddrag: Arbejdsordre – Maling og Tømrerarbejde Adresse: Nørregade 45, 2. th., 8000 Aarhus C Beskrivelse af opgave: Lejligheden skal males i alle opholdsrum. Der er i alt 85 m2 der skal males. Der er 3 værelser samt stue og gang....

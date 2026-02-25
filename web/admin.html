@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — konflikter</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:#f0f4f8;padding:16px;max-width:700px;margin:0 auto}
+    h1{color:#C00000;margin-bottom:20px}
+    .card{background:#fff;border-radius:10px;padding:16px;margin-bottom:14px;
+          box-shadow:0 1px 4px rgba(0,0,0,.1);border-left:4px solid #FFC107}
+    .card p{font-size:.9rem;margin-bottom:6px;color:#333}
+    .card p b{color:#1F4E79}
+    .actions{display:flex;gap:10px;margin-top:12px}
+    .btn-approve{padding:8px 16px;background:#28A745;color:#fff;border:none;
+                 border-radius:6px;cursor:pointer;font-size:.9rem}
+    .btn-reject{padding:8px 16px;background:#DC3545;color:#fff;border:none;
+                border-radius:6px;cursor:pointer;font-size:.9rem}
+    .empty{text-align:center;color:#666;margin-top:48px}
+  </style>
+</head>
+<body>
+  <h1>⚠ Admin — ventende konflikter</h1>
+  {% if changes %}
+    {% for c in changes %}
+      <div class="card">
+        <p><b>Opgave:</b> {{ c.tasks.address if c.tasks else c.task_id }}</p>
+        <p><b>Ressource:</b> {{ c.resource }}</p>
+        <p><b>Ønsket start:</b> {{ c.new_start }} &nbsp;|&nbsp; <b>Varighed:</b> {{ c.minutes }} min</p>
+        <p><b>Indsendt:</b> {{ c.created_at[:16].replace("T", " kl. ") }}</p>
+        <div class="actions">
+          <form method="post" action="/admin/approve/{{ c.id }}?token={{ token }}">
+            <button class="btn-approve" type="submit">✓ Godkend</button>
+          </form>
+          <form method="post" action="/admin/reject/{{ c.id }}?token={{ token }}">
+            <button class="btn-reject" type="submit">✗ Afvis</button>
+          </form>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="empty">
+      <p style="font-size:1.2rem">✅ Ingen ventende konflikter</p>
+      <p style="margin-top:8px;font-size:.9rem">Alt er i orden.</p>
+    </div>
+  {% endif %}
+</body>
+</html>

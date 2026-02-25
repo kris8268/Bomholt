@@ -1,0 +1,11 @@
+2026-02-19 14:27:15 | INFO | run_all | Logging to: data\out\run_all_20260219_142715.log
+2026-02-19 14:27:15 | INFO | run_all | === job_mail_planner: RUN ALL (A -> B -> C) ===
+2026-02-19 14:27:15 | INFO | run_all | Started at: 2026-02-19T14:27:15
+2026-02-19 14:27:15 | INFO | run_all | === Running A: ingest mails + pdf + text ===
+2026-02-19 14:27:15 | INFO | run_all | === Running B: analyze + carpenter preview ===
+2026-02-19 14:27:16 | INFO | run_all | === Running C: plan schedule preview ===
+2026-02-19 14:27:16 | INFO | run_all | === Output checks ===
+2026-02-19 14:27:16 | INFO | run_all | [OK] tasks.json: data\state\tasks.json
+2026-02-19 14:27:16 | INFO | run_all | [OK] carpenter_email_preview.txt: data\out\carpenter_email_preview.txt
+2026-02-19 14:27:16 | INFO | run_all | [OK] plan_preview.txt: data\out\plan_preview.txt
+2026-02-19 14:27:16 | INFO | run_all | === DONE ===

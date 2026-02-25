@@ -1,0 +1,360 @@
+[
+  {
+    "task_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C10100610600000000",
+    "source_message_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C10100610600000000",
+    "received_at": "2026-02-19T10:27:41",
+    "from": "kk@hkrk.dk",
+    "subject": "opgave",
+    "address": "(ukendt adresse)",
+    "pdf_paths": [
+      "data\\inbox_attachments\\00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C10100610600000000\\opgave_01_maler_tomrer_aarhus.pdf"
+    ],
+    "text_raw": "Arbejdsordre – Maling og Tømrerarbejde\nAdresse:\nNørregade 45, 2. th., 8000 Aarhus C\nm²\n85\nAntal værelser\n3\nBeskrivelse af opgave:\nLejligheden skal males i alle opholdsrum. Vægge og lofter skal have 2 lag maling. Der skal\nforetages mindre spartelarbejde.\nTømrerarbejde:\nDer skal udføres Tømmerarbejde: Udskiftning af 2 dørkarme samt justering af paneler i stuen.\nDeadline / tidsønske:\nArbejdet ønskes udført i uge 12.\nBilleder/notes:\n• Foto 1: (placeholder) • Foto 2: (placeholder) • Note: adgang via nøgleboks.",
+    "status": "PLANNED",
+    "analysis": {
+      "needs_carpenter": true,
+      "sqm": null,
+      "rooms": null,
+      "estimated_minutes": 300
+    },
+    "carpenter_notified": true,
+    "carpenter_notified_at": "2026-02-19T14:27:16",
+    "plan": {
+      "bucket": "UNK",
+      "blocks": [
+        {
+          "label": "TØMRER",
+          "start": "2026-02-21T09:53:00",
+          "end": "2026-02-21T11:32:00",
+          "kind": "carpenter"
+        },
+        {
+          "label": "MALER (PAINTER_3)",
+          "start": "2026-02-20T12:00:00",
+          "end": "2026-02-20T15:00:00",
+          "kind": "painter"
+        },
+        {
+          "label": "MALER (PAINTER_3)",
+          "start": "2026-02-21T11:32:00",
+          "end": "2026-02-21T13:32:00",
+          "kind": "painter"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C10100600600000000",
+    "source_message_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C10100600600000000",
+    "received_at": "2026-02-19T10:27:41",
+    "from": "kk@hkrk.dk",
+    "subject": "Opgave",
+    "address": "(ukendt adresse)",
+    "pdf_paths": [
+      "data\\inbox_attachments\\00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C10100600600000000\\opgave_02_maler_only_kbh.pdf"
+    ],
+    "text_raw": "Arbejdsordre – Malerarbejde\nAdresse:\nVesterbrogade 120, 4. tv., 1620 København V\nm²\n62\nAntal værelser\n2\nBeskrivelse af opgave:\nMaling af vægge i stue og soveværelse. Loft males kun i stuen. Let slibning og pletspartling.\nDeadline / tidsønske:\nSenest 21/03/2026.\nBilleder/notes:\n• Foto 1: (placeholder) • Foto 2: (placeholder) • Note: adgang via nøgleboks.",
+    "status": "PLANNED",
+    "analysis": {
+      "needs_carpenter": false,
+      "sqm": null,
+      "rooms": null,
+      "estimated_minutes": 300
+    },
+    "plan": {
+      "bucket": "UNK",
+      "blocks": [
+        {
+          "label": "MALER (PAINTER_5)",
+          "start": "2026-02-20T12:00:00",
+          "end": "2026-02-20T15:00:00",
+          "kind": "painter"
+        },
+        {
+          "label": "MALER (PAINTER_5)",
+          "start": "2026-02-21T07:00:00",
+          "end": "2026-02-21T09:00:00",
+          "kind": "painter"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005F0600000000",
+    "source_message_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005F0600000000",
+    "received_at": "2026-02-19T10:27:02",
+    "from": "kk@hkrk.dk",
+    "subject": "Opgave",
+    "address": "(ukendt adresse)",
+    "pdf_paths": [
+      "data\\inbox_attachments\\00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005F0600000000\\opgave_03_tomrer_heavy_odense.pdf"
+    ],
+    "text_raw": "Arbejdsordre – Maling + Tømrer\nAdresse:\nAlbanigade 10, 1. th., 5000 Odense C\nm²\n110\nAntal værelser\n4\nBeskrivelse af opgave:\nMaling af hele lejligheden inkl. gang. 2 lag på vægge, 1 lag på lofter. Spartel i revner.\nTømrerarbejde:\nTømmerarbejde: Montering af 6 meter fodpaneler samt reparation af dørtrin.\nDeadline / tidsønske:\nUge 10 (gerne tidligt i ugen).\nBilleder/notes:\n• Foto 1: (placeholder) • Foto 2: (placeholder) • Note: adgang via nøgleboks.",
+    "status": "PLANNED",
+    "analysis": {
+      "needs_carpenter": true,
+      "sqm": null,
+      "rooms": null,
+      "estimated_minutes": 300
+    },
+    "carpenter_notified": true,
+    "carpenter_notified_at": "2026-02-19T14:27:16",
+    "plan": {
+      "bucket": "UNK",
+      "blocks": [
+        {
+          "label": "TØMRER",
+          "start": "2026-02-21T08:14:00",
+          "end": "2026-02-21T09:53:00",
+          "kind": "carpenter"
+        },
+        {
+          "label": "MALER (PAINTER_2)",
+          "start": "2026-02-20T12:00:00",
+          "end": "2026-02-20T15:00:00",
+          "kind": "painter"
+        },
+        {
+          "label": "MALER (PAINTER_2)",
+          "start": "2026-02-21T09:53:00",
+          "end": "2026-02-21T11:53:00",
+          "kind": "painter"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005E0600000000",
+    "source_message_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005E0600000000",
+    "received_at": "2026-02-19T10:26:45",
+    "from": "kk@hkrk.dk",
+    "subject": "Opgave",
+    "address": "(ukendt adresse)",
+    "pdf_paths": [
+      "data\\inbox_attachments\\00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005E0600000000\\opgave_04_plantegning_only.pdf"
+    ],
+    "text_raw": "Plantegning / Opgavegrundlag\nAdresse:\nSkolegade 7, 2., 8700 Horsens\nm²\n74\nAntal værelser\n3\nBeskrivelse af opgave:\nPlantegning vedlagt. Noter: 3 værelser + stue. Samlet areal 74 m2.\nBilleder/notes:\n• Foto 1: (placeholder) • Foto 2: (placeholder) • Note: adgang via nøgleboks.",
+    "status": "PLANNED",
+    "analysis": {
+      "needs_carpenter": false,
+      "sqm": 74.0,
+      "rooms": 3,
+      "estimated_minutes": 948
+    },
+    "plan": {
+      "bucket": "UNK",
+      "blocks": [
+        {
+          "label": "MALER (PAINTER_6)",
+          "start": "2026-02-20T07:00:00",
+          "end": "2026-02-20T15:00:00",
+          "kind": "painter"
+        },
+        {
+          "label": "MALER (PAINTER_6)",
+          "start": "2026-02-21T07:00:00",
+          "end": "2026-02-21T14:48:00",
+          "kind": "painter"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005D0600000000",
+    "source_message_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005D0600000000",
+    "received_at": "2026-02-19T10:26:30",
+    "from": "kk@hkrk.dk",
+    "subject": "Opgave",
+    "address": "Danmarksgade 22, 7000 Fredericia",
+    "pdf_paths": [
+      "data\\inbox_attachments\\00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005D0600000000\\opgave_05_maler_tomrer_fredericia.pdf"
+    ],
+    "text_raw": "Renovering – Maler og Tømrer\nAdresse:\nDanmarksgade 22, 7000 Fredericia\nm²\n95\nAntal værelser\n3\nBeskrivelse af opgave:\nMaling af vægge/lofter i alle rum. 2 lag. Pletspartling efter behov.\nTømrerarbejde:\nTømmerarbejde: Opsætning af liste ved vindue samt justering af 1 dør.\nDeadline / tidsønske:\nSenest fredag i uge 11.\nBilleder/notes:\n• Foto 1: (placeholder) • Foto 2: (placeholder) • Note: adgang via nøgleboks.",
+    "status": "PLANNED",
+    "analysis": {
+      "needs_carpenter": true,
+      "sqm": null,
+      "rooms": null,
+      "estimated_minutes": 300
+    },
+    "carpenter_notified": true,
+    "carpenter_notified_at": "2026-02-19T14:27:16",
+    "plan": {
+      "bucket": "70",
+      "blocks": [
+        {
+          "label": "TØMRER",
+          "start": "2026-02-20T07:00:00",
+          "end": "2026-02-20T08:39:00",
+          "kind": "carpenter"
+        },
+        {
+          "label": "MALER (PAINTER_1)",
+          "start": "2026-02-20T08:39:00",
+          "end": "2026-02-20T13:39:00",
+          "kind": "painter"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005C0600000000",
+    "source_message_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005C0600000000",
+    "received_at": "2026-02-19T10:26:11",
+    "from": "kk@hkrk.dk",
+    "subject": "Opgave",
+    "address": "Søndergade 5, 7100 Vejle",
+    "pdf_paths": [
+      "data\\inbox_attachments\\00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005C0600000000\\opgave_06_maler_only_vejle.pdf"
+    ],
+    "text_raw": "Arbejdsordre – Malerarbejde (hurtig)\nAdresse:\nSøndergade 5, 7100 Vejle\nm²\n38\nAntal værelser\n1\nBeskrivelse af opgave:\nMaling af vægge i 1-værelses. Ingen loft. Minimal spartel.\nDeadline / tidsønske:\nSnarest muligt.\nBilleder/notes:\n• Foto 1: (placeholder) • Foto 2: (placeholder) • Note: adgang via nøgleboks.",
+    "status": "PLANNED",
+    "analysis": {
+      "needs_carpenter": false,
+      "sqm": null,
+      "rooms": null,
+      "estimated_minutes": 300
+    },
+    "plan": {
+      "bucket": "71",
+      "blocks": [
+        {
+          "label": "MALER (PAINTER_2)",
+          "start": "2026-02-20T07:00:00",
+          "end": "2026-02-20T12:00:00",
+          "kind": "painter"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005B0600000000",
+    "source_message_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005B0600000000",
+    "received_at": "2026-02-19T10:25:59",
+    "from": "kk@hkrk.dk",
+    "subject": "Opgave",
+    "address": "(ukendt adresse)",
+    "pdf_paths": [
+      "data\\inbox_attachments\\00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005B0600000000\\opgave_07_maler_tomrer_aalborg.pdf"
+    ],
+    "text_raw": "Opgave – Maling og Tømrer\nAdresse:\nBoulevarden 15, 3. mf., 9000 Aalborg\nm²\n78\nAntal værelser\n3\nBeskrivelse af opgave:\nMaling af vægge og lofter i 3 rum. 2 lag. Spartel ved stød.\nTømrerarbejde:\nTømmerarbejde: Udskiftning af 1 indvendig dør + karm.\nDeadline / tidsønske:\nUge 13.\nBilleder/notes:\n• Foto 1: (placeholder) • Foto 2: (placeholder) • Note: adgang via nøgleboks.",
+    "status": "PLANNED",
+    "analysis": {
+      "needs_carpenter": true,
+      "sqm": null,
+      "rooms": 3,
+      "estimated_minutes": 300
+    },
+    "carpenter_notified": true,
+    "carpenter_notified_at": "2026-02-19T14:27:16",
+    "plan": {
+      "bucket": "UNK",
+      "blocks": [
+        {
+          "label": "TØMRER",
+          "start": "2026-02-20T14:35:00",
+          "end": "2026-02-20T15:00:00",
+          "kind": "carpenter"
+        },
+        {
+          "label": "TØMRER",
+          "start": "2026-02-21T07:00:00",
+          "end": "2026-02-21T08:14:00",
+          "kind": "carpenter"
+        },
+        {
+          "label": "MALER (PAINTER_5)",
+          "start": "2026-02-20T07:00:00",
+          "end": "2026-02-20T12:00:00",
+          "kind": "painter"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005A0600000000",
+    "source_message_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005A0600000000",
+    "received_at": "2026-02-19T10:25:44",
+    "from": "kk@hkrk.dk",
+    "subject": "Opgave",
+    "address": "Nørrebrogade 30, 8900 Randers C",
+    "pdf_paths": [
+      "data\\inbox_attachments\\00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C101005A0600000000\\opgave_08_maler_only_randers.pdf"
+    ],
+    "text_raw": "Arbejdsordre – Maler (tilbud)\nAdresse:\nNørrebrogade 30, 8900 Randers C\nm²\n120\nAntal værelser\n5\nBeskrivelse af opgave:\nMaling af vægge i 5 rum. Loft males i 2 rum. Kræver afdækning.\nDeadline / tidsønske:\nSenest 01-04-2026.\nBilleder/notes:\n• Foto 1: (placeholder) • Foto 2: (placeholder) • Note: adgang via nøgleboks.",
+    "status": "PLANNED",
+    "analysis": {
+      "needs_carpenter": false,
+      "sqm": null,
+      "rooms": 5,
+      "estimated_minutes": 300
+    },
+    "plan": {
+      "bucket": "89",
+      "blocks": [
+        {
+          "label": "MALER (PAINTER_3)",
+          "start": "2026-02-20T07:00:00",
+          "end": "2026-02-20T12:00:00",
+          "kind": "painter"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C10100590600000000",
+    "source_message_id": "00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C10100590600000000",
+    "received_at": "2026-02-19T04:14:19",
+    "from": "kk@hkrk.dk",
+    "subject": "Test opgave",
+    "address": "(ukendt adresse)",
+    "pdf_paths": [
+      "data\\inbox_attachments\\00000000949F7FD6AC9DD74284CD837E7C5C44D40700C3B68E10F77511CEB4CD00AA00BBB6E600000000000C0000D9539C2261A6BB45B9DAB62C7081B3C10100590600000000\\test_opgave_maler_tomrer.pdf"
+    ],
+    "text_raw": "Arbejdsordre – Maling og Tømrerarbejde\nAdresse:\nNørregade 45, 2. th., 8000 Aarhus C\nBeskrivelse af opgave:\nLejligheden skal males i alle opholdsrum. Der er i alt 85 m2 der skal males. Der er 3 værelser samt\nstue og gang. Vægge og lofter skal have 2 lag maling. Der skal foretages mindre spartelarbejde\ninden maling påbegyndes.\nTømrerarbejde:\nDer skal udføres Tømmerarbejde i forbindelse med udskiftning af 2 dørkarme samt justering af\npaneler i stuen.\nDeadline:\nArbejdet ønskes udført i uge 12.",
+    "status": "PLANNED",
+    "analysis": {
+      "needs_carpenter": true,
+      "sqm": 85.0,
+      "rooms": 3,
+      "estimated_minutes": 1080
+    },
+    "carpenter_notified": true,
+    "carpenter_notified_at": "2026-02-19T14:27:16",
+    "plan": {
+      "bucket": "UNK",
+      "blocks": [
+        {
+          "label": "TØMRER",
+          "start": "2026-02-20T08:39:00",
+          "end": "2026-02-20T14:35:00",
+          "kind": "carpenter"
+        },
+        {
+          "label": "MALER (PAINTER_4)",
+          "start": "2026-02-20T14:35:00",
+          "end": "2026-02-20T15:00:00",
+          "kind": "painter"
+        },
+        {
+          "label": "MALER (PAINTER_4)",
+          "start": "2026-02-21T07:00:00",
+          "end": "2026-02-21T15:00:00",
+          "kind": "painter"
+        },
+        {
+          "label": "MALER (PAINTER_4)",
+          "start": "2026-02-22T07:00:00",
+          "end": "2026-02-22T15:00:00",
+          "kind": "painter"
+        },
+        {
+          "label": "MALER (PAINTER_4)",
+          "start": "2026-02-23T07:00:00",
+          "end": "2026-02-23T08:35:00",
+          "kind": "painter"
+        }
+      ]
+    }
+  }
+]

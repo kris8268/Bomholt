@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ task.address }}</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:#f0f4f8;padding:16px;max-width:640px;margin:0 auto}
+    h2{color:#1F4E79;margin-bottom:4px}
+    .sub{color:#666;font-size:.9rem;margin-bottom:20px}
+    .card{background:#fff;border-radius:10px;padding:16px;margin-bottom:16px;
+          box-shadow:0 1px 4px rgba(0,0,0,.08)}
+    .card h3{font-size:1rem;color:#1F4E79;margin-bottom:12px}
+    .block{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:.9rem}
+    .tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.75rem;font-weight:bold}
+    .tag-carpenter{background:#FFF3CD;color:#856404}
+    .tag-painter{background:#D1ECF1;color:#0C5460}
+    .tag-cleaning{background:#D4EDDA;color:#155724}
+    .msg{padding:12px 16px;border-radius:8px;margin-bottom:16px;font-weight:bold}
+    .msg-ok{background:#D4EDDA;color:#155724}
+    .msg-warn{background:#FFF3CD;color:#856404}
+    label{display:block;font-size:.9rem;color:#333;margin-bottom:4px;margin-top:12px}
+    select,input{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:1rem}
+    button{width:100%;margin-top:16px;padding:12px;background:#C00000;color:#fff;
+           border:none;border-radius:6px;font-size:1rem;font-weight:bold;cursor:pointer}
+    button:hover{background:#9B0000}
+    .back{display:inline-block;margin-bottom:16px;color:#2E75B6;text-decoration:none;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <a class="back" href="/">← Tilbage til oversigt</a>
+  <h2>{{ task.address or "(ukendt adresse)" }}</h2>
+  <div class="sub">Opgave ID: {{ task.task_id }} &nbsp;|&nbsp; {{ task.plan_date }}</div>
+
+  {% if msg %}
+    <div class="msg {% if '✓' in msg %}msg-ok{% else %}msg-warn{% endif %}">{{ msg }}</div>
+  {% endif %}
+
+  <div class="card">
+    <h3>Planlagte tidspunkter</h3>
+    {% if task.plan and task.plan.blocks %}
+      {% for b in task.plan.blocks %}
+        <div class="block">
+          <span class="tag tag-{{ b.kind }}">{{ b.label }}</span>
+          <span><b>{{ b.start[11:16] }}</b> – {{ b.end[11:16] }}</span>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p style="color:#999">Ingen blokke planlagt endnu.</p>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <h3>🔔 Meld forsinkelse</h3>
+    <form method="post" action="/delay/{{ task.task_id }}">
+      <label>Hvem er du?</label>
+      <select name="resource" required>
+        <option value="">— vælg —</option>
+        <option value="carpenter">Tømrer</option>
+        <option value="painter">Maler</option>
+        <option value="cleaning">Rengøring</option>
+      </select>
+
+      <label>Nyt starttidspunkt</label>
+      <input type="time" name="new_start" required>
+
+      <label>Estimeret varighed (minutter)</label>
+      <input type="number" name="minutes" value="120" min="15" max="480" required>
+
+      <button type="submit">Send ændring</button>
+    </form>
+  </div>
+</body>
+</html>
