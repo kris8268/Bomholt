@@ -5,7 +5,7 @@ import smtplib
 from datetime import datetime, timedelta
 from email.mime.text import MIMEText
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,jsonify
 from supabase import create_client
 from dotenv import load_dotenv
 
@@ -13,6 +13,71 @@ load_dotenv()
 
 app = Flask(__name__)
 
+
+@app.route("/calendar")
+def calendar_grid():
+    return render_template("calendar.html")
+
+
+@app.route("/api/events")
+def api_events():
+    sb = get_sb()
+
+    # FullCalendar sender start/end i query params
+    start = request.args.get("start")  # fx "2026-02-23T00:00:00Z"
+    end = request.args.get("end")      # fx "2026-03-02T00:00:00Z"
+
+    # fallback hvis nogen kalder endpointet uden params
+    if not start or not end:
+        today = datetime.now().date().isoformat()
+        end_date = (datetime.now().date() + timedelta(days=30)).isoformat()
+        start_date = today
+    else:
+        # din plan_date er DATE, så vi tager kun YYYY-MM-DD
+        start_date = start[:10]
+        end_date = end[:10]
+
+    res = (
+        sb.table("tasks")
+        .select("*")
+        .gte("plan_date", start_date)
+        .lte("plan_date", end_date)
+        .order("plan_date")
+        .execute()
+    )
+
+    events = []
+    for t in (res.data or []):
+        task_id = t.get("task_id")
+        address = t.get("address") or "(ukendt adresse)"
+        plan_date = t.get("plan_date")
+
+        plan = t.get("plan") or {}
+        blocks = plan.get("blocks") or []
+
+        if blocks:
+            for b in blocks:
+                start_dt = b.get("start")
+                end_dt = b.get("end")
+                label = b.get("label") or b.get("kind") or "Blok"
+                if start_dt and end_dt:
+                    events.append({
+                        "title": f"{label} • {address}",
+                        "start": start_dt,
+                        "end": end_dt,
+                        "url": f"/task/{task_id}",
+                    })
+        else:
+            if plan_date:
+                events.append({
+                    "title": f"{address}",
+                    "start": plan_date,
+                    "allDay": True,
+                    "url": f"/task/{task_id}",
+                })
+
+    return jsonify(events)
+    
 def get_sb():
     url = os.getenv("SUPABASE_URL")
     key = os.getenv("SUPABASE_KEY")

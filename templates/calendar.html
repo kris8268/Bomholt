@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalender</title>
+
+  <!-- FullCalendar -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+
+  <!-- Flatpickr (inline mini-kalender) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <style>
+    :root{
+      --brand:#0f6cbd;
+      --bg:#f5f6f8;
+      --panel:#ffffff;
+      --border:#e6e8ee;
+      --text:#1f1f1f;
+      --muted:#6b6f76;
+      --sidebar:234px;
+    }
+
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: Segoe UI, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow:hidden;
+    }
+
+    /* Topbar */
+    .topbar{
+      height:52px;
+      background:var(--brand);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      padding:0 14px;
+      gap:14px;
+      box-sizing:border-box;
+    }
+    .topbar .logo{ font-weight:600; letter-spacing:.2px; }
+    .topbar .search{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+    .topbar input{
+      width:min(720px, 100%);
+      border:none;
+      border-radius:6px;
+      padding:8px 12px;
+      outline:none;
+    }
+    .topbar .actions{ display:flex; gap:10px; }
+    .topbar .actions a{
+      color:#fff;
+      text-decoration:none;
+      opacity:.9;
+      font-size:14px;
+    }
+
+    /* Shell */
+    .shell{
+      height: calc(100% - 52px);
+      display:flex;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width: var(--sidebar);
+      min-width: var(--sidebar);
+      max-width: var(--sidebar);
+      background:var(--panel);
+      border-right:1px solid var(--border);
+      box-sizing:border-box;
+      padding:12px 10px;
+      overflow:auto;
+    }
+
+    .section-title{
+      font-size:12px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin:10px 6px 8px;
+    }
+
+    .mini{
+      padding:10px 10px 6px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:#fff;
+    }
+
+    /* Header i mini-kalender (måned + op/ned) */
+    .mini-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin:2px 2px 10px;
+    }
+    .mini-title{
+      font-weight:600;
+      font-size:14px;
+    }
+    .mini-nav{
+      display:flex;
+      gap:8px;
+    }
+    .mini-nav button{
+      width:28px;height:28px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:8px;
+      cursor:pointer;
+      line-height:1;
+    }
+
+    /* Flatpickr styles i sidebar (Outlook-ish) */
+    .mini .flatpickr-calendar{
+      box-shadow:none !important;
+      border:none !important;
+      width:100%;
+    }
+    .mini .flatpickr-months{ display:none; } /* vi bruger vores egen header */
+    .mini .flatpickr-weekdays{
+      border:none;
+      padding:0 2px;
+    }
+    .mini .flatpickr-weekday{
+      color:var(--muted);
+      font-weight:600;
+      font-size:12px;
+    }
+    .mini .flatpickr-days{ border:none; padding:0 2px 4px; }
+    .mini .flatpickr-day{
+      border-radius:8px;
+    }
+    .mini .flatpickr-day.selected,
+    .mini .flatpickr-day.startRange,
+    .mini .flatpickr-day.endRange{
+      background:var(--brand);
+      border-color:var(--brand);
+      color:#fff;
+    }
+
+    .cal-list{
+      margin-top:10px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:8px;
+      background:#fff;
+    }
+    .cal-item{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 6px;
+      border-radius:8px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background:var(--brand);
+    }
+    .cal-item label{
+      display:flex; align-items:center; gap:8px;
+      cursor:pointer;
+      user-select:none;
+      width:100%;
+    }
+    .cal-item input{ transform: translateY(1px); }
+    .hint{
+      margin:10px 6px 0;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.35;
+    }
+
+    /* Main calendar area */
+    .main{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+    }
+
+    .calendar-wrap{
+      flex:1;
+      margin:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 1px 6px rgba(0,0,0,.06);
+    }
+
+    /* Make FullCalendar look more Outlook-ish */
+    .fc .fc-toolbar-title{
+      font-size:20px;
+      font-weight:600;
+    }
+    .fc .fc-button{
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--text);
+    }
+    .fc .fc-button-primary:not(:disabled).fc-button-active,
+    .fc .fc-button-primary:not(:disabled):active{
+      background:var(--brand);
+      color:#fff;
+      border-color: var(--brand);
+    }
+    .fc .fc-timegrid-slot-label{ font-size:12px; color:var(--muted); }
+    .fc .fc-col-header-cell-cushion{ color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">Kalender</div>
+    <div class="search">
+      <input id="searchBox" type="text" placeholder="Søg (adresse / task_id)" />
+    </div>
+    <div class="actions">
+      <a href="/">Liste</a>
+      <a href="/admin">Admin</a>
+    </div>
+  </div>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="mini">
+        <div class="mini-head">
+          <div class="mini-title" id="miniTitle">Måned</div>
+          <div class="mini-nav">
+            <button type="button" id="miniPrev" aria-label="Forrige måned">↑</button>
+            <button type="button" id="miniNext" aria-label="Næste måned">↓</button>
+          </div>
+        </div>
+        <div id="miniCal"></div>
+      </div>
+
+      <div class="section-title">Mine kalendere</div>
+      <div class="cal-list">
+        <div class="cal-item">
+          <label>
+            <input id="calMain" type="checkbox" checked />
+            <span class="dot"></span>
+            <span>Kalender</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="hint">
+        Tip: klik en opgave for at åbne detaljer.
+        Senere kan vi tilføje drag & drop + “pending changes”.
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="calendar-wrap">
+        <div id="calendar"></div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const el = document.getElementById('calendar');
+      const searchBox = document.getElementById('searchBox');
+      const calMain = document.getElementById('calMain');
+
+      const miniTitle = document.getElementById('miniTitle');
+      const miniPrev = document.getElementById('miniPrev');
+      const miniNext = document.getElementById('miniNext');
+
+      const dkMonths = [
+        "Januar","Februar","Marts","April","Maj","Juni",
+        "Juli","August","September","Oktober","November","December"
+      ];
+
+      const cal = new FullCalendar.Calendar(el, {
+        initialView: 'timeGridWeek',
+        locale: 'da',
+        firstDay: 1,
+        nowIndicator: true,
+        height: '100%',
+        expandRows: true,
+
+        slotMinTime: '06:00:00',
+        slotMaxTime: '20:00:00',
+        allDaySlot: true,
+
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'timeGridDay,timeGridWeek,dayGridMonth'
+        },
+
+        events: function(fetchInfo, successCallback, failureCallback){
+          const q = encodeURIComponent(searchBox.value || "");
+          const enabled = calMain.checked ? "1" : "0";
+          const url = `/api/events?start=${encodeURIComponent(fetchInfo.startStr)}&end=${encodeURIComponent(fetchInfo.endStr)}&q=${q}&enabled=${enabled}`;
+
+          fetch(url)
+            .then(r => r.json())
+            .then(data => successCallback(data))
+            .catch(err => failureCallback(err));
+        },
+
+        eventClick: function(info) {
+          const url = info.event.extendedProps.url;
+          if (url) window.location.href = url;
+        }
+      });
+
+      cal.render();
+
+      // Inline mini-kalender (flatpickr)
+      const fp = flatpickr("#miniCal", {
+        inline: true,
+        locale: "da",
+        defaultDate: new Date(),
+        onChange: function(selectedDates) {
+          if (selectedDates && selectedDates[0]) {
+            cal.gotoDate(selectedDates[0]);
+          }
+        },
+        onMonthChange: function(selectedDates, dateStr, instance){
+          miniTitle.textContent = `${dkMonths[instance.currentMonth]} ${instance.currentYear}`;
+        },
+        onYearChange: function(selectedDates, dateStr, instance){
+          miniTitle.textContent = `${dkMonths[instance.currentMonth]} ${instance.currentYear}`;
+        }
+      });
+
+      // Init header title
+      miniTitle.textContent = `${dkMonths[fp.currentMonth]} ${fp.currentYear}`;
+
+      // Month nav buttons
+      miniPrev.addEventListener('click', () => fp.changeMonth(-1));
+      miniNext.addEventListener('click', () => fp.changeMonth(1));
+
+      // Sync mini-kalender når man navigerer i FullCalendar
+      cal.on('datesSet', function(){
+        fp.setDate(cal.getDate(), false);
+        miniTitle.textContent = `${dkMonths[fp.currentMonth]} ${fp.currentYear}`;
+      });
+
+      // Søg -> refetch
+      let t = null;
+      searchBox.addEventListener('input', () => {
+        clearTimeout(t);
+        t = setTimeout(() => cal.refetchEvents(), 200);
+      });
+
+      // Toggle kalender
+      calMain.addEventListener('change', () => cal.refetchEvents());
+    });
+  </script>
+</body>
+</html>
